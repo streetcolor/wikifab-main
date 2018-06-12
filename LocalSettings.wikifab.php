@@ -41,6 +41,7 @@ wfLoadExtension( 'MultimediaViewer' );
 wfLoadExtension( 'SimpleEmbedVideo' );
 wfLoadExtension( 'Tabber');
 wfLoadExtension( 'CustomProperties' );
+wfLoadExtension( 'WikiAdminConfig' );
 
 $wgScribuntoDefaultEngine = 'luastandalone';
 

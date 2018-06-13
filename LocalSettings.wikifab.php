@@ -133,3 +133,74 @@ function wfAddMimeTypes( $mimeMagic ) {
 
 //Set languages using :
 $wgSimpleLangageSelectionLangList = ['fr', 'en', 'de', 'es', 'it', 'pt'];
+
+$wfexploreDynamicsFilters = [
+'Page_creator' => [
+'name' => 'Page_creator',
+'type' => 'fulltext'
+],
+'Type' => [
+'name'=> 'Type',
+'translate_prefix' => 'wf-propertyvalue-type-',
+],
+'Area' => [
+'name'=> 'Area',
+'translate_prefix' => 'wf-propertyvalue-area-',
+],
+'Difficulty' => [
+'name'=> 'Difficulty',
+'translate_prefix' => 'wf-propertyvalue-difficulty-',
+],
+'Cost' => [
+'name'=> 'Cost',
+'values' =>  [
+'0-10' => '0 - 10',
+'10-50' => '10 - 50',
+'50-100' => '50 - 100',
+'100-inf' => '100 - ∞'
+]
+],
+'Language' => [
+'name'=> 'Language',
+'values' => [
+'ALL' => "all"
+],
+'translate_prefix' => 'wfexplore-language-',
+],
+'Modification_date' => [
+'name' => 'Modification_date',
+'type' => 'sort',
+'translate_prefix' => 'wfexplore-ga-last-modified'
+],
+'Google_Analytics_Views' => [
+'name' => 'Google_Analytics_Views',
+'type' => 'sort',
+'translate_prefix' => 'wfexplore-ga-views'
+],
+'Comments' => [
+'name' => 'Comments',
+'type' => 'sort',
+'translate_prefix' => 'wfexplore-comments'
+],
+'I_did_it' => [
+'name' => 'I_did_it',
+'type' => 'sort',
+'translate_prefix' => 'wfexplore-ididit'
+],
+'Favorites' => [
+'name' => 'Favorites',
+'type' => 'sort',
+'translate_prefix' => 'wfexplore-star'
+],
+];
+
+$GLOBALS['sespSpecialProperties'] = array(
+    '_CUSER'
+);
+
+$wfexploreCategoriesNames['Modification_date'] = wfMessage("wfexplore-filters-last-modified");
+$wfexploreCategoriesNames['Page_creator'] = wfMessage("wfexplore-filters-page-creator");
+$wfexploreCategoriesNames['Google_Analytics_Views'] = wfMessage('wfexplore-filters-views');
+$wfexploreCategoriesNames['I_did_it'] = wfMessage('wfexplore-filters-ididit');
+$wfexploreCategoriesNames['Favorites'] = wfMessage('wfexplore-filters-favorites');
+$wfexploreCategoriesNames['Comments'] = wfMessage('wfexplore-filters-comments');

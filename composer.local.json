@@ -184,7 +184,7 @@
 		"wikifab/side-summary":"^1.0.1",
 		"wikifab/simple-embed-video":"^1.0.2",
 		"wikifab/SimpleLanguageSelector": "^1.0.6",
-		"wikifab/SocialProfile": "^1.2.0",
+		"wikifab/SocialProfile": "dev-ticket-56",
 		"wikifab/stepnumber": "^0.1.0",
 		"wikifab/tabber": "^2.4.1",
 		"wikifab/tables-in-semantic": "^1.0.0",

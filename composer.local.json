@@ -176,7 +176,7 @@
 		"wikifab/MmsUpload": "^0.4.3",
 		"wikifab/MultimediaViewer":"^0.3.0",
 		"wikifab/page-forms": "dev-master",
-		"wikifab/page-loading-spinner": "^1.0.0",
+		"wikifab/page-loading-spinner": "dev-ticket-674",
 		"wikifab/PageMediaGallery":"dev-julien",
 		"wikifab/PdfExportRequest": "^1.0.2",
 		"wikifab/random-selection": "^2.2.2",

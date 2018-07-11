@@ -205,3 +205,6 @@ $wfexploreCategoriesNames['Google_Analytics_Views'] = wfMessage('wfexplore-filte
 $wfexploreCategoriesNames['I_did_it'] = wfMessage('wfexplore-filters-ididit');
 $wfexploreCategoriesNames['Favorites'] = wfMessage('wfexplore-filters-favorites');
 $wfexploreCategoriesNames['Comments'] = wfMessage('wfexplore-filters-comments');
+
+$wgCommentStreamsEnableVoting = true;
+$wgCommentStreamsEnableAccepting = true;

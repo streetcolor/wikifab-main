@@ -2,6 +2,10 @@
 	"repositories": [
 		{
 			"type": "vcs",
+			"url": "git@gitlab.com:Dokit/mediawiki-extensions-CommentStreams.git"
+        },
+		{
+			"type": "vcs",
 			"url": "git@gitlab.com:Dokit/extension-CustomProperties.git"
 		},
         {
@@ -152,6 +156,7 @@
 		"mediawiki/CategoryTree": "*",
 		"mediawiki/clean-changes":"*",
 		"mediawiki/cldr": "*",
+		"mediawiki/comment-streams": "dev-julien",
 		"mediawiki/localisation-update": "*",
 		"mediawiki/translate":"dev-REL1_29",
 		"mediawiki/flow": "dev-REL1_29",

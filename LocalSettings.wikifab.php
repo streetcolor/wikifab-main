@@ -208,3 +208,4 @@ $wfexploreCategoriesNames['Comments'] = wfMessage('wfexplore-filters-comments');
 
 $wgCommentStreamsEnableVoting = true;
 $wgCommentStreamsEnableAccepting = true;
+$wgCommentStreamsUnfoldedNewCommentStreamBox = false;

@@ -178,11 +178,11 @@
 		"wikifab/googleAnalytics": "^0.1.0",
 		"wikifab/ImageAnnotator": "^1.3.0",
 		"wikifab/InputBox": "^128.1.0",
-		"wikifab/MmsUpload": "dev-ticket-743",
+		"wikifab/MmsUpload": "dev-julien",
 		"wikifab/MultimediaViewer":"^0.3.0",
 		"wikifab/page-forms": "dev-master",
 		"wikifab/page-loading-spinner": "dev-ticket-674",
-		"wikifab/PageMediaGallery":"dev-ticket-743",
+		"wikifab/PageMediaGallery":"dev-julien",
 		"wikifab/PdfExportRequest": "^1.0.2",
 		"wikifab/random-selection": "^2.2.2",
 		"wikifab/sample-display": "^0.1.0",
@@ -202,7 +202,7 @@
 		"wikifab/Wf-search": "^0.1.4",
 		"wikifab/wfext-style": "dev-julien",
 		"wikifab/widgets": "^1.3.1",
-		"wikifab/wikifabStyleModule": "dev-ticket-743"
+		"wikifab/wikifabStyleModule": "dev-julien"
 	},
 	"suggest": {
 		"ext-imagick": "*",

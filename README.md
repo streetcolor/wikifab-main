@@ -13,8 +13,11 @@ There are 2 methods to install Wikifab:
 
 ### 1. Download package and upload it to you website
 
-Download it here : http://releases.wikifab.org/wikifab/wikifabFullPackage-0.2.1.zip
+Download it here : https://github.com/Wikifab/wikifab-main/releases/download/1.1.0-rc10/wikifab-1.1.0-rc10.zip
 Unzip and upload directory on your server.
+
+
+(check https://github.com/Wikifab/wikifab-main/releases for latest versions)
 
 ### 2. Set Up your wiki
 
@@ -56,9 +59,9 @@ download it and extract to your website
 
 in bash : 
 
-	wget https://releases.wikimedia.org/mediawiki/1.28/mediawiki-1.28.0.tar.gz
-	tar -xzf mediawiki-1.28.0.tar.gz
-	mv mediawiki-1.28.0 /var/www/yourwebsite
+	wget https://releases.wikimedia.org/mediawiki/1.28/mediawiki-1.29.0.tar.gz
+	tar -xzf mediawiki-1.29.0.tar.gz
+	mv mediawiki-1.29.0 /var/www/yourwebsite
 
 ### 2. install your wiki
 
@@ -91,7 +94,7 @@ in bash:
 	cd /var/www/yourwebsite
 	curl http://getcomposer.org/installer | php
 	php composer.phar config minimum-stability dev
-	php composer.phar update
+	php composer.phar update --no-dev
 
 ### 5. download other needed extensions
 
@@ -120,6 +123,10 @@ In your "LocalSettings.php" file, add a line to include  file 'LocalSettings.wik
 
 	include('LocalSettings.wikifab.php');
 
+To enable internationalization support, add the following line 
+
+	include('LocalSettings.i18n.php');
+
 and run the php update script 
 
 
@@ -127,6 +134,7 @@ in bash :
 
 	cd /var/www/yourwebsite
 	echo "include('LocalSettings.wikifab.php');" >> LocalSettings.php
+	echo "include('LocalSettings.i18n.php');" >> LocalSettings.php
 	php maintenance/update.php
 
 ### 7. Install Wikifab pages and formatting
@@ -135,7 +143,7 @@ You need to create all pages and forms to finish installation and have a wikifab
 
 You can do id with this script (only available for french for now) :
 
-	php maintenance/initWikifab.php --setWikifabHomePage
+	php maintenance/initWikifab.php --setWikifabHomePage --int
 
 Warning : this will change the home page of your wiki, if you do not want this, simply execute the command without param "--setWikifabHomePage"
 
@@ -159,6 +167,34 @@ We recomend you recaptcha : to set it up :
 	$wgCaptchaClass = 'ReCaptchaNoCaptcha';
 	$wgReCaptchaSiteKey = 'YOUR-KEY';
 	$wgReCaptchaSecretKey = 'YOUR-SECRET-KEY';
+
+### Extension:3D
+
+For wiki support for uploading and viewing 3D models, you need to install the 3D extension. To do so, add the following line to your LocalSettings file :
+
+include('LocalSettings.3d.php');
+
+with bash :
+
+echo "include('LocalSettings.3d.php');" >> LocalSettings.php
+
+#### Install 3d2png
+
+3d2png is the thumbnail renderer for 3D files. It will render png thumbnails exactly like this extension will display the objects, using the same JS libraries running in Node.js instead of the browser.
+
+To install, clone and install the 3d2png repository: 
+
+	git clone https://gerrit.wikimedia.org/r/p/3d2png
+	cd 3d2png
+	npm install
+
+On Linux, you'll also need to install a virtual framebuffer in order for 3d2png to be able to headlessly capture the 3D object.
+
+	apt-get install xvfb
+
+After having successfully installed 3d2png, we'll need to tell Extension:3D how to call this thumbnail generator service. Add this to your LocalSettings.php, and make sure to update the paths to match your configuration: 
+
+$wg3dProcessor = [ '/usr/bin/xvfb-run', '-a', '-s', '-ac -screen 0 1280x1024x24' ,'/path-to-your-repository/3d2png.js' ];
 
 ## TroubleShooting
 

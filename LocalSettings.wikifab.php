@@ -1,5 +1,9 @@
 <?php
 
+if(! isset($wgUploadPath) || ! $wgUploadPath ) {
+	$wgUploadPath = $wgScriptPath . '/images';
+}
+
 $wgEnableUploads = true;
 
 $wgDefaultSkin = "chameleon";
@@ -13,7 +17,7 @@ require_once "$IP/extensions/WfSearch/WfSearch.php";
 require_once "$IP/extensions/Explore/WfExplore.php";
 require_once "$IP/extensions/AuthorDiv/WfAuthorDiv.php";
 require_once "$IP/extensions/Carousel/Carousel.php";
-require_once "$IP/extensions/Cite/Cite.php";
+//require_once "$IP/extensions/Cite/Cite.php";
 require_once "$IP/extensions/Drafts/Drafts.php";
 require_once "$IP/extensions/UserFunctions/UserFunctions.php";
 require_once "$IP/extensions/SocialProfile/SocialProfile.php";
@@ -21,14 +25,13 @@ require_once "$IP/extensions/Echo/Echo.php";
 require_once "$IP/extensions/UsersWatchlist/UsersWatchList.php";
 require_once "$IP/extensions/WfextStyle/wikifabstyle.php";
 require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
-require_once "$IP/extensions/UsersWatchlist/UsersWatchList.php";
 require_once "$IP/extensions/UsersWatchButton/UsersWatchButton.php";
 require_once "$IP/extensions/MmsUpload/MsUpload.php";
 require_once "$IP/extensions/Flow/Flow.php";
 require_once("$IP/extensions/GroupsPage/GroupsPage.php");
-require_once("$IP/extensions/UsersPagesLinks/UsersPagesLinks.php");
 require_once "$IP/extensions/Scribunto/Scribunto.php";
 wfLoadExtension( 'CheckPageTitle' );
+wfLoadExtension( 'CommentsProperty' );
 wfLoadExtension( 'EmbedVideo' );
 wfLoadExtension( 'FlowCounterTalks' );
 wfLoadExtension( 'PageMediaGallery' );
@@ -38,13 +41,14 @@ wfLoadExtension( 'ImageAnnotator' );
 wfLoadExtension( 'InputBox' );
 wfLoadExtension( 'RandomSelection' );
 wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'SemanticExtraSpecialProperties' );
 wfLoadExtension( 'SimpleEmbedVideo' );
 wfLoadExtension( 'Tabber');
 wfLoadExtension( 'CustomProperties' );
 wfLoadExtension( 'CommentStreams' );
+wfLoadExtension( 'UsersPagesLinks');
 
 $wgScribuntoDefaultEngine = 'luastandalone';
-
 
 $egDraftsAutoSaveWait = 10;
 $egDraftsAutoSaveTimeout = 30;
@@ -55,7 +59,7 @@ $wgNamespaceContentModels[NS_USER_TALK] = 'flow-board';
 
 $egChameleonLayoutFile= __DIR__ . '/skins/wikifabStyleModule/layout-wikifab.xml';
 $egChameleonLayoutFileSearchResult= __DIR__ . '/skins/wikifabStyleModule/layout-wikifab-search-result-int.php';
-$egChameleonLayoutFileSearchResultUserPage = __DIR__ . '/skins/wikifabStyleModule/layout-wikifab-search-result-userpage.html';
+$egChameleonLayoutFileSearchResultUserPage = __DIR__ . '/skins/wikifabStyleModule/layout-wikifab-search-result-userpage-int.php';
 
 $egChameleonExternalStyleModules = array(
     __DIR__ . '/skins/wikifabStyleModule/chameleon-wikifab.less' => $wgScriptPath . '/skins/wikifabStyleModule',
@@ -68,7 +72,7 @@ $wgMessagesDirs['WikifabOrg'] = __DIR__ . "/i18n"; # Location of localisation fi
 
 $wgFooterIcons['poweredby']['wikifab']['src'] = "http://files.wikifab.org/logo/poweredby_wikifab_88x31.png";
 $wgFooterIcons['poweredby']['wikifab']['alt'] = "Powered by wikifab";
-$wgFooterIcons['poweredby']['wikifab']['url'] = "http://wikifab.org/w/index.php/Wikifab:Developers";
+$wgFooterIcons['poweredby']['wikifab']['url'] = "http://wikifab.org/wiki/Wikifab:Developers";
 
 
 $wgUploadSizeWarning = '2097152';
@@ -77,9 +81,11 @@ $wgFileExtensions = array(
     //image
     'png', 'gif', 'jpg', 'jpeg', 'doc',
     'xls', 'mpp', 'pdf', 'ppt', 'tiff', 'bmp', 'docx', 'xlsx',
-    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'svg',
+    'pptx', 'ps', 'odt', 'ods', 'odp', 'odg', 'svg','dxf','ai',
 	// CAO
 	'dxf',
+	// Arduino
+	'ino',
     // fichier 3D
 	'3dc','3ds','ac','asc','bvh','blend','geo','dae','dwf','dw','x','fbx',
 	'gta','mu','kmz','lwo','lws','flt','iv','osg','osgt','osgb','ive',
@@ -110,9 +116,25 @@ $wgGroupPermissions['user']['skipcaptcha'] = true;
 $wgGroupPermissions['*']['viewedittab'] = false;
 $wgPageFormsRenameEditTabs = true;
 $wgUsersWatchListAllowAll = true;
+$sfgRenameEditTabs = true;
 
 $wgExploreUseThumbs = true;
 
+$wgThumbLimits = [
+		150,
+		300,
+		400,
+		600,
+		800
+];
+$wgDefaultUserOptions['thumbsize'] = 3;
+$wgDefaultUserOptions['multimediaviewer-enable'] = 1;
+
+$wgUploadThumbnailRenderMap[] = 150;
+$wgUploadThumbnailRenderMap[] = 300;
+$wgUploadThumbnailRenderMap[] = 400;
+$wgUploadThumbnailRenderMap[] = 600;
+$wgUploadThumbnailRenderMap[] = 800;
 
 $wgUserBoard = true;
 $wgGroupPermissions ['user'] ['userboard-sendMessage'] = true;
@@ -128,6 +150,7 @@ $wgUserProfileDisplay['userspageslinks'] = true;
 $wgHooks['MimeMagicInit'][] = 'wfAddMimeTypes';
 function wfAddMimeTypes( $mimeMagic ) {
 	$mimeMagic->addExtraTypes( "text/plain dxf" );
+	$mimeMagic->addExtraTypes( "text/plain ino" );
 	$mimeMagic->addExtraTypes( "text/plain stl" );
 	$mimeMagic->addExtraTypes( "application/pdf ai" );
 }
@@ -136,64 +159,54 @@ function wfAddMimeTypes( $mimeMagic ) {
 $wgSimpleLangageSelectionLangList = ['fr', 'en', 'de', 'es', 'it', 'pt'];
 
 $wfexploreDynamicsFilters = [
-'Page_creator' => [
-'name' => 'Page_creator',
-'type' => 'fulltext'
-],
-'Type' => [
-'name'=> 'Type',
-'translate_prefix' => 'wf-propertyvalue-type-',
-],
-'Area' => [
-'name'=> 'Area',
-'translate_prefix' => 'wf-propertyvalue-area-',
-],
-'Difficulty' => [
-'name'=> 'Difficulty',
-'translate_prefix' => 'wf-propertyvalue-difficulty-',
-],
-'Cost' => [
-'name'=> 'Cost',
-'values' =>  [
-'0-10' => '0 - 10',
-'10-50' => '10 - 50',
-'50-100' => '50 - 100',
-'100-inf' => '100 - ∞'
-]
-],
-'Language' => [
-'name'=> 'Language',
-'values' => [
-'ALL' => "all"
-],
-'translate_prefix' => 'wfexplore-language-',
-],
-'Modification_date' => [
-'name' => 'Modification_date',
-'type' => 'sort',
-'translate_prefix' => 'wfexplore-ga-last-modified'
-],
-'Google_Analytics_Views' => [
-'name' => 'Google_Analytics_Views',
-'type' => 'sort',
-'translate_prefix' => 'wfexplore-ga-views'
-],
-'Comments' => [
-'name' => 'Comments',
-'type' => 'sort',
-'translate_prefix' => 'wfexplore-comments'
-],
-'I_did_it' => [
-'name' => 'I_did_it',
-'type' => 'sort',
-'translate_prefix' => 'wfexplore-ididit'
-],
-'Favorites' => [
-'name' => 'Favorites',
-'type' => 'sort',
-'translate_prefix' => 'wfexplore-star'
-],
-];
+	'Page_creator' => [
+			'name' => 'Page_creator',
+			'type' => 'fulltext'
+			],
+	'Type' => [
+			'name'=> 'Type',
+			'translate_prefix' => 'wf-propertyvalue-type-',
+			],
+	'Area' => [
+			'name'=> 'Area',
+			'translate_prefix' => 'wf-propertyvalue-area-',
+			],
+	'Difficulty' => [
+			'name'=> 'Difficulty',
+			'translate_prefix' => 'wf-propertyvalue-difficulty-',
+			],
+	'Cost' => [
+			'name'=> 'Cost',
+			'values' =>  [
+					'0-10' => '0 - 10',
+					'10-50' => '10 - 50',
+					'50-100' => '50 - 100',
+					'100-inf' => '100 - ∞'
+					]
+			],
+	'Language' => [
+			'name'=> 'Language',
+			'values' => [
+					'ALL' => "all"
+					],
+			'translate_prefix' => 'wfexplore-language-',
+			],
+	'Modification_date' => [
+			'name' => 'Modification_date',
+			'type' => 'sort',
+			'translate_prefix' => 'wfexplore-ga-last-modified'
+			],
+	'I_did_it' => [
+			'name' => 'I_did_it',
+			'type' => 'sort',
+			'translate_prefix' => 'wfexplore-ididit'
+			],
+	'Favorites' => [
+			'name' => 'Favorites',
+			'type' => 'sort',
+			'translate_prefix' => 'wfexplore-star'
+			],
+	];
 
 $GLOBALS['sespSpecialProperties'] = array(
     '_CUSER'

@@ -7,13 +7,13 @@ __NOTOC__
 {{Help-menu-créer-un-nouveau-tutoriel}}
 </div>
 <div class="col-md-8 col-sm-12 col-xs-12">
-<h2 class="contribuer-subtitle-first">{{SUBPAGENAME}}</h2>
+<h2 class="contribuer-subtitle-first">{{int:help-renseigner-les-meta-donnees}}</h2>
 
 1. {{int:help-choisir-le-nom-de-son-tutoriel-01}}
 
 2. {{int:help-choisir-le-nom-de-son-tutoriel-02}}
 
-3. {{int:help-choisir-le-nom-de-son-tutoriel-03|[[Wikifab:Help/Choisir le nom de son tutoriel|{{int:wf-formtutorial-popuptutoname-title}}]]}}
+3. {{int:help-choisir-le-nom-de-son-tutoriel-03|[[Help:Choisir le nom de son tutoriel|{{int:wf-formtutorial-popuptutoname-title}}]]}}
 
 4. {{int:help-choisir-le-nom-de-son-tutoriel-04|[[Lien|{{int:help-choisir-le-nom-de-son-tutoriel}}]]}}
 

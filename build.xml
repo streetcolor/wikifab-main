@@ -20,7 +20,32 @@
 		</delete>
 	</target>
 
-	<target name="getMediawiki" depends="getMediawiki-1-29" />
+	<target name="getMediawiki" depends="getMediawiki-1-31" />
+
+	<target name="getMediawiki-1-31">
+		<if>
+			<not>
+				<available file="build/mediawiki-1.31.0" type="dir" />
+			</not>
+			<then>
+				<exec executable="bash">
+					<arg value="-c"/>
+					<arg value="wget https://releases.wikimedia.org/mediawiki/1.31/mediawiki-1.31.0.tar.gz -O build/mediawiki-1.31.0.tar.gz"/>
+				</exec>
+				<untar file="build/mediawiki-1.31.0.tar.gz" todir="build">
+					<fileset dir=".">
+						<include name="*.tar.gz"/>
+						<include name="*.tar"/>
+					</fileset>
+				</untar>
+			</then>
+		</if>
+		<copy todir="build/wikifab" >
+			<fileset dir="build/mediawiki-1.31.0">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
 
 	<target name="getMediawiki-1-29">
 		<if>
@@ -208,7 +233,10 @@
         <echo msg="Downloading 3D..." />
 		<exec executable="bash" dir="build" checkreturn="true" logoutput="true">
 			<arg value="-c"/>
-			<arg value="wget -O 3D.tar.gz  https://extdist.wmflabs.org/dist/extensions/3D-REL1_29-05199c3.tar.gz"/>
+			<!-- https://extdist.wmflabs.org/dist/extensions/3D-REL1_29-05199c3.tar.gz -->
+			<!-- https://extdist.wmflabs.org/dist/extensions/3D-REL1_31-84bb175.tar.gz -->
+						
+			<arg value="wget -O 3D.tar.gz  https://extdist.wmflabs.org/dist/extensions/3D-REL1_31-84bb175.tar.gz"/>
 		</exec>
 		<exec executable="bash" dir="build" checkreturn="true" logoutput="true">
 			<arg value="-c"/>

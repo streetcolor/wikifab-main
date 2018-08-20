@@ -135,7 +135,7 @@
 		"wikifab/ve-force-reload": "^1.0.0",
 		"wikifab/Wf-search": "^0.1.4",
 		"wikifab/ve-templates": "^1.0.0",
-		"wikifab/wfext-style": "dev-master",
+		"wikifab/wfext-style": "dev-julien",
 		"wikifab/widgets": "^1.3.1",
 		"wikifab/wikifab-style-module": "dev-master"
 	},

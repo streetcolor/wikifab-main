@@ -45,6 +45,7 @@ wfLoadExtension( 'Tabber');
 wfLoadExtension( 'CustomProperties' );
 wfLoadExtension( 'CommentStreams' );
 wfLoadExtension( 'UsersPagesLinks');
+wfLoadExtension( 'LatestDiscussions' );
 
 $wgScribuntoDefaultEngine = 'luastandalone';
 

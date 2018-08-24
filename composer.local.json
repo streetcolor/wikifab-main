@@ -2,6 +2,10 @@
 	"repositories": [
 		{
 			"type": "vcs",
+			"url": "git@github.com:Wikifab/LatestDiscussions.git"
+		},
+		{
+			"type": "vcs",
 			"url": "git@gitlab.com:Dokit/mediawiki-extensions-CommentStreams.git"
         },
 		{
@@ -113,6 +117,7 @@
 		"wikifab/googleAnalytics": "^0.1.0",
 		"wikifab/image-annotator": "^1.4.0",
 		"wikifab/InputBox": "^128.1.0",
+		"wikifab/latest-discussions": "dev-master",
 		"wikifab/mms-upload": "dev-julien",
 		"wikifab/MultimediaViewer":"^0.3.0",
 		"wikifab/page-forms": "dev-REL1_31",

@@ -122,7 +122,7 @@
 		"wikifab/MultimediaViewer":"^0.3.0",
 		"wikifab/page-forms": "dev-REL1_31",
 		"wikifab/page-loading-spinner": "^1.1.0",
-		"wikifab/page-media-gallery":"dev-julien",
+		"wikifab/page-media-gallery":"dev-version2",
 		"wikifab/PdfExportRequest": "^1.0.2",
 		"wikifab/random-selection": "^2.2.2",
 		"wikifab/sample-display": "^0.1.0",

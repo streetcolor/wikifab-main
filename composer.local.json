@@ -118,7 +118,7 @@
 		"wikifab/image-annotator": "^1.4.0",
 		"wikifab/InputBox": "^128.1.0",
 		"wikifab/latest-discussions": "dev-master",
-		"wikifab/mms-upload": "dev-julien",
+		"wikifab/mms-upload": "dev-ticket-842",
 		"wikifab/MultimediaViewer":"^0.3.0",
 		"wikifab/page-forms": "dev-REL1_31",
 		"wikifab/page-loading-spinner": "^1.1.0",

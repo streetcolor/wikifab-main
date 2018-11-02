@@ -1,0 +1,10 @@
+<!-- code HTML pour la partie print (haut) -->
+<div class="tuto-items-details-container">
+<div class="tuto-items-details-container-left"><i class="fa fa-building-o" aria-hidden="true"></i> PropertyTitle</div>
+<div class="tuto-items-details-container-right"><span class="propertyKey" style="display:none">[[PropertyPageName::{{{PropertyPageName|}}}]]</span> {{{PropertyPageName|}}}</div>
+</div>
+<!-- code HTML pour la partie web (bas) -->
+<div class="tuto-items-details-container noprint">
+<div class="tuto-items-details-container-left"><i class="fa fa-building-o" aria-hidden="true"></i> PropertyTitle</div>
+<div class="tuto-items-details-container-right"><span class="propertyKey" style="display:none">[[PropertyPageName::{{{PropertyPageName|}}}]]</span> {{{PropertyPageName|}}}</div>
+</div>

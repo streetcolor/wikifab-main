@@ -1,1 +1,1 @@
-{{#displayExplore:query=[[Category:Tutorials]]}}
+{{#displayExplore:query=[[Category:Tutorials]] [[Complete::Published]]}}

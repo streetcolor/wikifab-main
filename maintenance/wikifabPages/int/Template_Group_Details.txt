@@ -5,18 +5,24 @@ __NOTOC__
 <div class="container group-title-box">
 <div class="row">
 <div class="col-md-3 col-sm-3 col-xs-12">
-<div class="group-main-image">
-{{#if:{{{group-logo|}}}|[[File:{{{group-logo}}}|link=]]|[[File:no-logo-group.gif|link=]]}}
-</div>
+<div class="tuto-main-image">{{#if:{{{group-logo|}}}|[[File:{{{group-logo}}}|link=]]|<div class="no-image-yet"><div><i class="fa fa-image" aria-hidden="true"></i></div><p>{{int:wf-noimageyet}}</p></div>}}</div>
 </div>
 <div class="col-md-9 col-sm-9 col-xs-12">
-<h1 class="group-title">{{PAGENAME}}{{#if:{{{group-type|}}}|<span class="group-type"><span class="propertyKey" style="display:none">[[group-type::{{{group-type|}}}]]</span>  {{int:wf-propertyvalue-grouptype-{{{group-type|}}}|}}</span>|}}</h1>
-<p class="group-description">{{{group-description|}}}</p>
-<div class="group-info">{{#if:{{{group-address|}}}|<span><i class="fa fa-map-marker"></i> [[group-address::{{{group-address|}}}]]</span>|}}{{#if:{{{group-email|}}}|<span><i class="fa fa-envelope"></i> [[group-email::{{{group-email|}}}]]</span>|}}{{#if:{{{group-url|}}}|<span><i class="fa fa-globe"></i> [[group-url::{{{group-url|}}}]]</span>|}}
-
+<h1 class="group-title">{{PAGENAME}}</h1> {{#ifanon:|<div class="tabGroupsOptionButton">
+<div class="dropdown"><span class="edit-btn btn dropdown-toggle" type="button" data-toggle="dropdown">...</span>
+<ul class="dropdown-menu">
+<li>[{{fullurl:group:{{PAGENAME}}|action=formedit}} {{int:edit}}]</li>
+<li>[{{SERVER}}/w/index.php/Spécial:ReordonnerGroupe?groupName=group:{{PAGENAMEE}} {{int:wf-reorder-tutorials}}]</li>
+<li>[{{SERVER}}/w/index.php/Spécial:Renommer_une_page/group:{{PAGENAMEE}} {{int:move}}]</li>
+</ul>
 </div>
+</div>}}
+<p class="group-description">{{{group-description|}}}</p>
 {{#stepNumber: step| init}}
 </div>
 </div>
 </div>
-[[Category:Group]]
+<div class="container">
+{{#displayMemberTutorials:this}}
+</div>
+<div class="noprint">[[Category:Group]] {{#arraymap:{{{Categories|}}}|,|x|[[Category:x]]|&#32;}}</div>

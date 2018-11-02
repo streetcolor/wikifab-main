@@ -1,18 +1,13 @@
-<div class="Items-page-title">
+__NOTOC__<div class="explore-page-header items-banner">
 <div class="container">
-<div class="row">
-<div class="col-md-5 col-sm-5 col-xs-12">
-<h1><i class="fa fa-tag" aria-hidden="true"></i> {{int:dokit-items-title}}</h1>
-</div>
-<div class="col-md-7 col-sm-7 col-xs-12">
-<div data-toggle="modal" data-target="#CreateNewPage" class="askButton"><p class="sign-up-button-hp"><i class="fa fa-plus" aria-hidden="true"></i> {{int:dokit-items-page-btn}}</p></div>
+<h1>{{int:dokit-items-title}}</h1>
+<div class="items-page-searchbar">
 <inputbox>
 type=search
 namespaces=Item
 placeholder={{int:dokit-items-search-placeholder}}
-searchbuttonlabel={{int:search}}
+searchbuttonlabel=Search
 </inputbox>
-</div>
 </div>
 </div>
 </div>
@@ -24,12 +19,11 @@ searchbuttonlabel={{int:search}}
 {{#ask: [[Item:+]] [[Category:Tools]]
  |?Cost
  |?Currency
- |?ItemSku
- |format=broadtable
+ |format=table
  |link=all
- |headers=show
+ |headers=plain
  |searchlabel=&hellip; autres résultats
- |class=sortable wikitable smwtable
+ |class=sortable jquery-tablesorter table table-striped
 }}
 </div>
 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -37,13 +31,24 @@ searchbuttonlabel={{int:search}}
 {{#ask: [[Item:+]] [[Category:Parts]]
  |?Cost
  |?Currency
- |?ItemSku
- |format=broadtable
+ |format=table
  |link=all
- |headers=show
+ |headers=plain
  |searchlabel=&hellip; autres résultats
- |class=sortable wikitable smwtable
+ |class=sortable jquery-tablesorter table table-striped
 }}
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="CreateNewItem" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header"><h4 class="modal-title" id="myModalLabel">{{int:dokit-items-page-btn}}</h4><span type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></span></div>
+<div class="modal-body NewPageTabs">
+<div class="tab-content">
+<div class="NewPageField">{{#forminput:form=Item|namespace=Item|placeholder={{int:dokit-newpage-item-placeholder}}|button text={{int:wf-formtutorial-main-btn}}}}</div>
+</div>
 </div>
 </div>
 </div>

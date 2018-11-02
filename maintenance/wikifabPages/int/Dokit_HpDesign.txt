@@ -1,0 +1,13 @@
+{{HpDesignChoices
+|HpDesignBanner=yes
+|HpDesignSearchBar=yes
+|HpDesignTitleDe=Wissensdatenbank
+|HpDesignTitleEs=Base de conocimientos
+|HpDesignTitleEn=Knowledge base
+|HpDesignTitleFr=Base de connaissances
+|HpDesignTitleIt=Base di conoscenza
+|HpDesignTitlePt=Base de conhecimento
+|HpDesignType=Tutorials
+|HpDesignComments=yes
+|HpDesignRecentChanges=yes
+}}

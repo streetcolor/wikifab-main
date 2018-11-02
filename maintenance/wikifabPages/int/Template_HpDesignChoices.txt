@@ -1,0 +1,22 @@
+<div class="row">
+<div class="col-xs-3">
+{{Dokit:AdminNav}}
+</div>
+<div class="col-xs-9">
+<div class="alert alert-success" role="alert"><strong>Well done!</strong> The design of your homepage has been updated! [[Accueil|Go check it out]]</div>
+<div style="display:none">
+* Banner: [[HpDesignBanner::{{{HpDesignBanner|}}}]]
+* Searchbar: [[HpDesignSearchBar::{{{HpDesignSearchBar|}}}]]
+* Title FR: [[HpDesignTitleFr::{{{HpDesignTitleFr|}}}]]
+* Title EN: [[HpDesignTitleEn::{{{HpDesignTitleEn|}}}]]
+* Title DE: [[HpDesignTitleDe::{{{HpDesignTitleDe|}}}]]
+* Title ES: [[HpDesignTitleEs::{{{HpDesignTitleEs|}}}]]
+* Title IT: [[HpDesignTitleIt::{{{HpDesignTitleIt|}}}]]
+* Title PT: [[HpDesignTitlePt::{{{HpDesignTitlePt|}}}]]
+* Explore type: [[HpDesignType::{{{HpDesignType|}}}]]
+* Comments: [[HpDesignComments::{{{HpDesignComments|}}}]]
+* Recent changes: [[HpDesignRecentChanges::{{{HpDesignRecentChanges|}}}]]
+</div>
+</div>
+</div>
+[[Category:DokitHpDesign]]

@@ -1,0 +1,158 @@
+__NOTOC__<noinclude>
+<div class="tutorial-page">
+<div class="container">
+<div class="new-tutorial-page">
+{{#ifanon:<div class="alert alert-warning" role="alert">
+{{int:wf-formtutorial-alert|[[Special:UserLogin/signup|{{int:wf-formtutorial-alert-createaccount}}]]|[[Special:UserLogin|{{int:wf-formtutorial-alert-login}}]]}}
+</div>
+</div>
+</div>
+</div>|
+<h1>{{int:wf-formtutorial-main-title}}</h1>
+{{#forminput:form=DokitPage|button text={{int:dokit-formDokitPage-main-btn}}|placeholder={{int:wf-formtutorial-main-placeholder}}|}}
+</div>
+</div>
+</div>
+}}
+</noinclude><includeonly>
+<div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+{{{for template|Tuto Details}}}
+{{{field|DokitPageEnableDetails|input type=checkboxes|show on select=yes=>dokitpage-template-enabledetails}}}
+<div class="row" id="dokitpage-template-enabledetails">
+<div class="col-md-4 col-sm-4 col-xs-12 col-pic-detail">
+<div class="WfFormLabel"><span>{{int:wf-formtutorial-main-picture-field-title}}</span><span class="custom-tooltip">{{#info:{{int:wf-formtutorial-main-picture-tooltip}}}}</span></div>
+<div class="msuploadContainer msuploadContainerTall">
+{{{field|Main_Picture|uploadable|size=25|class=form-picture|image preview}}}
+{{{field|Main_Picture_annotation|input type=editableImage|target=Main_Picture}}}
+</div>
+</div>
+<div class="col-md-8 col-sm-8 col-xs-12">
+<div class="row">
+<div class="col-md-12">
+<div class="WfFormLabel">{{int:wf-formtutorial-description-field-title}}</div><div>{{{field|Description|input type=textarea|mandatory|translatable|rows=2|maxlength=4000|class=WfFormTextarea|placeholder={{int:wf-formtutorial-description-field-placeholder}}|}}}</div>
+<!-- START CHECKBOX ADMIN PROPERTY LIST --><!--END CHECKBOX ADMIN PROPERTY LIST -->
+</div>
+</div>
+<div class="row">
+{{#if: {{#ask: [[Dokit:PropertiesList]] [[PropertyDifficulty::yes]] }} |<div class="col-md-6 col-xs-12">
+<div class="WfFormLabel"><span>{{int:wf-formtutorial-difficulty-field-title}}</span><span class="custom-tooltip">{{#info:<p>'''{{int:wf-formtutorial-difficulty-popup-title1}}''' {{int:wf-formtutorial-difficulty-popup-text1}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title2}}''' {{int:wf-formtutorial-difficulty-popup-text2}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title3}}''' {{int:wf-formtutorial-difficulty-popup-text3}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title4}}''' {{int:wf-formtutorial-difficulty-popup-text4}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title5}}''' {{int:wf-formtutorial-difficulty-popup-text5}}</p>}}</span></div>
+{{{field|Difficulty|input type=dropdown|mandatory|class=WfFormDropdown|mapping using translate=wf-propertyvalue-difficulty-}}} 
+</div>|}}
+{{#if: {{#ask: [[Dokit:PropertiesList]] [[PropertyDuration::yes]] }} |<div class="col-md-6 col-xs-12">
+<div class="WfFormLabel"><span>{{int:wf-formtutorial-duration-field-title}}</span><span class="custom-tooltip">{{#info:{{int:wf-formtutorial-duration-popup}}|}}</span></div>
+{{{field|Duration|mandatory|class=WfFormText WfFormTextCombine}}} {{{field|Duration-type|mandatory|input type=dropdown|class=WfFormDropdown WfFormDropdownCombine|mapping using translate=wf-propertyvalue-durationtype-}}} 
+</div>|}}
+<!-- START DROPDOWN ADMIN PROPERTY LIST --><!--END DROPDOWN ADMIN PROPERTY LIST -->
+</div>
+<div class="WfFormLabel"><span>{{int:wf-formtutorial-tags-field-title}}</span><span class="custom-tooltip">{{#info:{{int:wf-formtutorial-tags-popup}}|}}</span></div>
+<div class="WfFormTokensParent">{{{field|Tags|placeholder={{int:wf-formtutorial-tag-field-tooltip}}|class=WfFormTokens|input type=tokens|size=}}}</div>
+</div>
+</div>
+{{{end template}}}
+<div class="hrContentMinor-2"></div>
+<div class="multipleTemplate-dokitstep">{{{for template|DokitPageStep|multiple|maximum instances=400|add button text=+ }}}
+<div class="dokit-sos-radio">{{{field|StepType|input type=radiobutton|show on select=Media=>dokitpage-template-media;Video=>dokitpage-template-video;Title=>dokitpage-template-title;VeText=>dokitpage-template-vetext;File=>dokitpage-template-file;Transclude=>dokitpage-template-transclude;Wikitext=>dokitpage-template-wikitext;StepLeft=>dokitpage-stepleft;StepRight=>dokitpage-stepright;}}}</div>
+<div id="dokitpage-template-title">{{{field|DokitPageTitleType|input type=dropdown|class=WfFormDropdown WfFormDropdownCombineLeft}}} {{{field|DokitPageTitle|input type=text|class=WfFormText WfFormTextCombineLeft}}}</div>
+<div id="dokitpage-template-vetext">{{{field|DokitPageVeText|input type=textarea|translatable|rows=16|class=form-textarea}}}</div>
+<div id="dokitpage-template-media">
+{{{field|DokitPageImageColumns|default=OneColumn|mandatory|show on select=OneColumn=>dokitpage-template-image1;TwoColumns=>dokitpage-template-image2;ThreeColumns=>dokitpage-template-image3;FourColumns=>dokitpage-template-image4;}}}
+<div class="row" id="dokitpage-template-image1">
+<div class="col-md-12">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage11|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation11|input type=editableImage|target=DokitPageImage11}}}
+</div>
+</div>
+</div>
+<div class="row" id="dokitpage-template-image2">
+<div class="col-md-6">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage21|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation21|input type=editableImage|target=DokitPageImage21}}}
+</div>
+</div>
+<div class="col-md-6">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage22|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation22|input type=editableImage|target=DokitPageImage22}}}
+</div>
+</div>
+</div>
+<div class="row" id="dokitpage-template-image3">
+<div class="col-md-4">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage31|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation31|input type=editableImage|target=DokitPageImage31}}}
+</div>
+</div>
+<div class="col-md-4">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage32|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation32|input type=editableImage|target=DokitPageImage32}}}
+</div>
+</div>
+<div class="col-md-4">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage33|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation33|input type=editableImage|target=DokitPageImage33}}}
+</div>
+</div>
+</div>
+<div class="row" id="dokitpage-template-image4">
+<div class="col-md-3">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage41|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation41|input type=editableImage|target=DokitPageImage41}}}
+</div>
+</div>
+<div class="col-md-3">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage42|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation42|input type=editableImage|target=DokitPageImage42}}}
+</div>
+</div>
+<div class="col-md-3">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage43|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation43|input type=editableImage|target=DokitPageImage43}}}
+</div>
+</div>
+<div class="col-md-3">
+<div class="col-pic-step msuploadContainer msuploadContainerTall">
+{{{field|DokitPageImage44|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageImageAnnotation44|input type=editableImage|target=DokitPageImage44}}}
+</div>
+</div>
+</div>
+</div>
+<div class="row" id="dokitpage-stepright">
+<div class="col-md-6">
+{{{field|DokitPageStepRightImage|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageStepRightImageAnnotation|input type=editableImage|target=DokitPageStepRightImage}}}
+</div>
+<div class="col-md-6">
+{{{field|DokitPageStepRightContent|input type=textarea|translatable|rows=5}}}
+</div>
+</div>
+<div class="row" id="dokitpage-stepleft">
+<div class="col-md-6">
+{{{field|DokitPageStepLeftContent|input type=textarea|translatable|rows=5}}}
+</div>
+<div class="col-md-6">
+{{{field|DokitPageStepLeftImage|size=32|class=form-picture|default=|uploadable|image preview}}}
+{{{field|DokitPageStepLeftImageAnnotation|input type=editableImage|target=DokitPageStepLeftImage}}}
+</div>
+</div>
+<div id="dokitpage-template-video" class="multipleTemplateHideButton">
+{{#formLinkVideo:{{{field|TutoVideoService|dropdown|mandatory|class=embedVideoDropdown}}} | {{{field|TutoVideoURL|mandatory|class=embedVideoUrlInput WfFormText}}}}} 
+</div>
+<div id="dokitpage-template-file">{{{field|DokitPageFile|class=WfFormText|default=|uploadable}}}</div>
+<div id="dokitpage-template-transclude">{{{field|DokitPageTransclude|input type=combobox|existing values only|values from namespace=Main}}}</div>
+<div id="dokitpage-template-wikitext">{{{field|DokitPageWikitext|input type=textarea|translatable|rows=5}}}</div>
+{{{end template}}}</div>
+<hr class="WfEndForm hide-mobile-view">
+<hr class="WfEndForm hide-mobile-view">
+<div class="saving-menu">{{{standard input|saveDraft}}}
+<span class="display-none">{{{standard input|watch}}}</span>{{{standard input|save}}}<span id="loaderSave"><i class="fa fa-spinner fa-pulse fa-2x fa-fw "></i></span>{{{standard input|cancel}}}<div class="status-checkbox-container"><span class="status-checkbox-label">{{int:wf-completetooltip-label}}</span><span class="status-checkbox">{{{for template|Tuto_Status}}}{{{field|Complete|default=Draft|mandatory|input type=dropdown|class=WfFormDropdownLight|mapping using translate=wf-propertyvalue-complete-}}}{{{end template}}}</span><span class="custom-tooltip-light">{{#info:<p>'''{{int:wf-propertyvalue-complete-Published}} :''' {{int:wf-completetooltip-published-description}}</p><p>'''{{int:wf-propertyvalue-complete-Draft}} :''' {{int:wf-completetooltip-draft-description}}</p>}}</span></div>
+</div>
+</includeonly>

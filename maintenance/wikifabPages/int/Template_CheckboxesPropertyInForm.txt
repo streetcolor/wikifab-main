@@ -1,0 +1,2 @@
+<div class="WfFormLabel">PropertyTitle</div>
+{{{field|PropertyTitle|mandatory|input type=checkboxes|class=WfFormCheckbox|hide select all}}}

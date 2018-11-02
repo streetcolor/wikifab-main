@@ -1,0 +1,12 @@
+This is a property of type [[Has type::Text]].
+
+Les valeurs autorisées pour cette propriété sont :
+* [[Allows value::Media]]
+* [[Allows value::Video]]
+* [[Allows value::Title]]
+* [[Allows value::VeText]]
+* [[Allows value::File]]
+* [[Allows value::Transclude]]
+* [[Allows value::Wikitext]]
+* [[Allows value::StepLeft]]
+* [[Allows value::StepRight]]

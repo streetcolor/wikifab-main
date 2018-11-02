@@ -1,9 +1,14 @@
 __NOTOC__
-<div class="aide-section">
+<div class="explore-page-header help-banner">
 <div class="container">
 <h1>{{int:help-maintitle}}</h1>
-<p>{{int:help-subtitle}}</p>
-<div class="wf-inputbox">
+<div class="items-page-searchbar">
+<inputbox>
+type=search
+namespaces=Aide
+placeholder={{int:dokit-help-search-placeholder}}
+searchbuttonlabel=Search
+</inputbox>
 </div>
 </div>
 </div>

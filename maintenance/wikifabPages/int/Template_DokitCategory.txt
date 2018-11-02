@@ -1,0 +1,4 @@
+<div class="category-header">
+{{#breadcrumb:}}
+<p class="category-description">[[Description::{{{Description|}}}]]</p>
+</div>

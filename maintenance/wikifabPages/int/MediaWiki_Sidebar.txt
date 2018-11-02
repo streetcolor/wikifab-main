@@ -1,7 +1,7 @@
 * navigation
-** :Explore|{{int:wf-explore-title}}
-** :Items|{{int:dokit-items-title}}
-** :Help|Help
+** :Manuals|{{int:dokit-manual-title}}
+{{#if: {{#ask: [[Dokit:DocOptions]] [[DokitItemEnable::yes]] }}|** :Items|{{int:dokit-items-title}}|}}
+** Special:AllDiscussions|{{int:dokit-alldiscussions-title}}
 * SEARCH
 * TOOLBOX
 * LANGUAGES

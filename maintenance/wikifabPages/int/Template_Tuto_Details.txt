@@ -1,25 +1,24 @@
 __NOTOC__
-<p class="tuto-details-autor-revision noprint">{{int:wf-author-title}} {{#displayAuthorDiv:toto}} | {{int:wf-formtutorial-area-field-title}} : {{#arraymap:{{{Area|}}}|,|x|[[Area::x|{{int:wf-propertyvalue-area-x}}]]}}</p>
+<p class="tuto-details-autor-revision noprint">{{int:wf-author-title}} {{#displayAuthorDiv:toto}} | [{{fullurl:{{PAGENAME}}|action=history}} {{int:wf-last-edit-on}}] {{REVISIONDAY:{{PAGENAME}}}}/{{REVISIONMONTH:{{PAGENAME}}}}/{{REVISIONYEAR:{{PAGENAME}}}} {{int:wf-last-edit-by}} [[user:{{REVISIONUSER:{{PAGENAME}}}}|{{REVISIONUSER:{{PAGENAME}}}}]]</p>
 <p class="tuto-details-autor-revision print-only">{{#displayAuthorDiv:toto}}</p>
 <div class="row firstPage">
 <div class="col-md-5 col-sm-5 col-xs-12 fullWidthPrint">
 <div class="tuto-main-image">{{#if:{{{Main_Picture|}}}|{{#annotatedImage:[[File:{{{Main_Picture}}}|frameless|border]]|{{{Main_Picture_annotation}}}}}|<div class="no-image-yet"><div><i class="fa fa-image" aria-hidden="true"></i></div><p>{{int:wf-noimageyet}}</p></div>}}
 <div class="print-only pageurl">{{fullurl:{{FULLPAGENAME}}}}</div>
-<div class="print-only lasteditdateinfo">{{int:wf-last-edit-on}} {{REVISIONDAY2}}/{{REVISIONMONTH}}/{{REVISIONYEAR}}</div>
-<p class="tuto-details-ga-views"><i class="fa fa-eye"></i> {{#if:{{#show: {{PAGENAME}} |?Nombre de vues}}|{{#show: {{PAGENAME}} |?Nombre de vues}}|0}} {{int:wf-ga-views}}</p>
+<div class="print-only lasteditdateinfo">{{int:wf-last-edit-on}} {{REVISIONDAY2}}/{{REVISIONMONTH}}/{{REVISIONYEAR}} </div>
 </div>
 <div class="row tuto-details-box print-only">
 <br>
 <div class="col-md-5">
 <div class="tuto-items-container">
-<div class="tuto-items-details-container">
+{{#if:{{{Difficulty|}}}|<div class="tuto-items-details-container">
 <div class="tuto-items-details-container-left"><i class="fa fa-tachometer" aria-hidden="true"></i> {{int:wf-formtutorial-difficulty-field-title}}</div>
 <div class="tuto-items-details-container-right"><span class="propertyKey" style="display:none">[[Difficulty::{{{Difficulty|}}}]]</span> {{int:wf-propertyvalue-difficulty-{{{Difficulty|}}}|}}</div>
-</div>
-<div class="tuto-items-details-container">
+</div>|}}
+{{#if:{{{Duration|}}}|<div class="tuto-items-details-container">
 <div class="tuto-items-details-container-left"><i class="fa fa-clock-o" aria-hidden="true"></i> {{int:wf-formtutorial-duration-field-title}}</div>
-<div class="tuto-items-details-container-right">[[Duration::{{{Duration|}}}]] <span class="propertyKey" style="display:none">[[Duration-type::{{{Duration-type|}}}]]</span>  {{int:wf-propertyvalue-durationtype-{{{Duration-type|}}}|}}</div>
-</div>
+<div class="tuto-items-details-container-right">[[Duration::{{{Duration|}}}]] <span class="propertyKey" style="display:none">[[Duration-type::{{{Duration-type|}}}]]</span> {{int:wf-propertyvalue-durationtype-{{{Duration-type|}}}|}}</div>
+</div>|}}
 <!-- START ADMIN PRINT PROPERTY LIST -->
 <!--END ADMIN PRINT PROPERTY LIST -->
 </div>
@@ -35,14 +34,14 @@ __NOTOC__
 <div class="tuto-details-box">
 <p class="tuto-details-about-title noprint">[[Description::{{{Description|}}}]]</p>
 <div class="tuto-items-container">
-<div class="tuto-items-details-container noprint">
+{{#if:{{{Difficulty|}}}|<div class="tuto-items-details-container noprint">
 <div class="tuto-items-details-container-left"><i class="fa fa-tachometer" aria-hidden="true"></i> {{int:wf-formtutorial-difficulty-field-title}}</div>
 <div class="tuto-items-details-container-right"><span class="propertyKey" style="display:none">[[Difficulty::{{{Difficulty|}}}]]</span> {{int:wf-propertyvalue-difficulty-{{{Difficulty|}}}|}}</div>
-</div>
-<div class="tuto-items-details-container noprint">
+</div>|}}
+{{#if:{{{Duration|}}}|<div class="tuto-items-details-container noprint">
 <div class="tuto-items-details-container-left"><i class="fa fa-clock-o" aria-hidden="true"></i> {{int:wf-formtutorial-duration-field-title}}</div>
 <div class="tuto-items-details-container-right">[[Duration::{{{Duration|}}}]] <span class="propertyKey" style="display:none">[[Duration-type::{{{Duration-type|}}}]]</span>  {{int:wf-propertyvalue-durationtype-{{{Duration-type|}}}|}}</div>
-</div>
+</div>|}}
 <!-- START ADMIN WEB PROPERTY LIST -->
 <!--END ADMIN WEB PROPERTY LIST -->
 <div class="tuto-items-languages noprint"><languages /></div>
@@ -53,10 +52,10 @@ __NOTOC__
 </div>
 </div>
 <span class="propertyKey" style="display:none">[[Tags::{{{Tags|}}}]]</span>
+<span class="propertyKey" style="display:none">[[DokitPageEnableDetails::{{{DokitPageEnableDetails|}}}]]</span>
 <span class="propertyKey" style="display:none">[[Language::{{{Language|}}}]]</span> 
 <span class="propertyKey" style="display:none">[[SourceLanguage::{{{SourceLanguage|}}}]]</span> 
 <span class="propertyKey" style="display:none">[[IsTranslation::{{{IsTranslation|}}}]]</span> 
-<div class="noprint">[[Category:Tutorials]]</div>
 {{#stepNumber: step| init}}
 <hr class="print-only printPageBreakAfter"/>
 {{#seo:

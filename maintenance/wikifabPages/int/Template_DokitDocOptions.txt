@@ -1,0 +1,12 @@
+<div class="row">
+<div class="col-xs-3">
+{{Dokit:AdminNav}}
+</div>
+<div class="col-xs-9">
+<div class="alert alert-success" role="alert"> Options saved!</div>
+<div style="display:none">
+* Enable Items: [[DokitItemEnable::{{{DokitItemEnable|}}}]]
+</div>
+</div>
+</div>
+[[Category:DokitDocOptions]]

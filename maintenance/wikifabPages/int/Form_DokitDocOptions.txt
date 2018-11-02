@@ -1,0 +1,14 @@
+__NOTOC__<noinclude>
+{{#forminput:form=DokitDocOptions|button text=Modifier les options|placeholder=Dokit:DocOptions|default=Dokit:DocOptions}}
+</noinclude><includeonly>
+<div class="row">
+<div class="col-xs-3">{{Dokit:AdminNav}}</div>
+<div class="col-xs-9">
+{{{for template|DokitDocOptions}}}
+<div>{{{field|DokitItemEnable|input type=checkboxes|default=yes|mapping using translate=wf-propertyvalue-DokitItemEnable-}}}</div>
+{{{end template}}}
+<hr>
+<span class="display-none">{{{standard input|saveDraft}}} {{{standard input|watch}}}</span>{{{standard input|save|class=btn btn-primary}}}<span id="loaderSave"><i class="fa fa-spinner fa-pulse fa-2x fa-fw "></i></span>{{{standard input|cancel}}}
+</div>
+</div>
+</includeonly>

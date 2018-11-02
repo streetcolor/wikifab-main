@@ -1,0 +1,9 @@
+This is a property of type [[Has type::Text]].
+
+Les valeurs autorisées pour cette propriété sont :
+* [[Allows value::H1]]
+* [[Allows value::H2]]
+* [[Allows value::H3]]
+* [[Allows value::H4]]
+* [[Allows value::H5]]
+* [[Allows value::H6]]

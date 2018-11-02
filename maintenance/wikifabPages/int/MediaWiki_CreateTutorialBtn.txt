@@ -6,10 +6,10 @@
 <div class="modal-body NewPageTabs">
 <div>
 <ul class="nav nav-tabs" role="tablist">
-<li role="presentation"><span data-target="#guide" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-list-ol" aria-hidden="true"></i>
- {{int:dokit-newpage-tutorial}}</span></li>
+<li role="presentation"><span data-target="#guide" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-list-ol" aria-hidden="true"></i> {{int:dokit-newpage-tutorial}}</span></li>
 <li role="presentation"><span data-target="#wikipage" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-file-text-o" aria-hidden="true"></i> {{int:dokit-newpage-wikipage}}</span></li>
-<li role="presentation"><span data-target="#item" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-tag" aria-hidden="true"></i> {{int:dokit-newpage-item}}</span></li>
+{{#if: {{#ask: [[Dokit:DocOptions]] [[DokitItemEnable::yes]] }}|<li role="presentation"><span data-target="#item" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-tag" aria-hidden="true"></i> {{int:dokit-newpage-item}}</span></li>|}}
+<li role="presentation"><span data-target="#manual" aria-controls="settings" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> {{int:dokit-newpage-manual}}</span></li>
 </ul>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane" id="guide">
@@ -20,9 +20,13 @@
 <p class="NewPageTabsLabel"><span class="glyphicon glyphicon-info-sign"></span> {{int:dokit-newpage-wikipage-description}}</p>
 <div class="NewPageField">{{#forminput:form=WikiPage|placeholder={{int:dokit-newpage-wikipage-placeholder}}|button text={{int:wf-formtutorial-main-btn}}}}</div>
 </div>
-<div role="tabpanel" class="tab-pane" id="item">
+{{#if: {{#ask: [[Dokit:DocOptions]] [[DokitItemEnable::yes]] }}|<div role="tabpanel" class="tab-pane" id="item">
 <p class="NewPageTabsLabel"><span class="glyphicon glyphicon-info-sign"></span> {{int:dokit-newpage-item-description}}</p>
 <div class="NewPageField">{{#forminput:form=Item|namespace=Item|placeholder={{int:dokit-newpage-item-placeholder}}|button text={{int:wf-formtutorial-main-btn}}}}</div>
+</div>|}}
+<div role="tabpanel" class="tab-pane" id="manual">
+<p class="NewPageTabsLabel"><span class="glyphicon glyphicon-info-sign"></span> {{int:dokit-newpage-manual-description}}</p>
+<div class="NewPageField">{{#forminput:form=Group|namespace=Group|placeholder={{int:dokit-manual-create-placeholder}}|button text={{int:wf-formtutorial-main-btn}}}}</div>
 </div>
 </div>
 </div>

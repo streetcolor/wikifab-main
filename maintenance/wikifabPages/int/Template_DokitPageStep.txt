@@ -1,0 +1,66 @@
+{{#switch: {{{StepType|}}}
+| Media = {{#switch: {{{DokitPageImageColumns|}}}
+| OneColumn = <div class="row">
+<div class="col-xs-12 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage11}}}|frameless]]|{{{DokitPageImageAnnotation11}}}}}</div>
+</div>
+| TwoColumns = <div class="row">
+<div class="col-xs-6 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage21}}}|frameless]]|{{{DokitPageImageAnnotation21}}}}}</div>
+<div class="col-xs-6 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage22}}}|frameless]]|{{{DokitPageImageAnnotation22}}}}}</div>
+</div>
+| ThreeColumns = <div class="row">
+<div class="col-xs-4 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage31}}}|frameless]]|{{{DokitPageImageAnnotation31}}}}}</div>
+<div class="col-xs-4 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage32}}}|frameless]]|{{{DokitPageImageAnnotation32}}}}}</div>
+<div class="col-xs-4 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage33}}}|frameless]]|{{{DokitPageImageAnnotation33}}}}}</div>
+</div>
+| FourColumns = <div class="row">
+<div class="col-xs-3 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage41}}}|frameless]]|{{{DokitPageImageAnnotation41}}}}}</div>
+<div class="col-xs-3 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage42}}}|frameless]]|{{{DokitPageImageAnnotation42}}}}}</div>
+<div class="col-xs-3 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage43}}}|frameless]]|{{{DokitPageImageAnnotation43}}}}}</div>
+<div class="col-xs-3 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageImage44}}}|frameless]]|{{{DokitPageImageAnnotation44}}}}}</div>
+</div>
+}}
+| Video = <div class="row">
+<div class="col-xs-12">
+<div class="allSizeScreenButton">
+<span class="resizeButton smallButton"></span>
+<span class="resizeButton mediumButton"></span>
+<span class="resizeButton largeButton"></span>
+</div>
+<div class="videoMainContainer">
+<div class="videoContainer">
+{{#ev:{{{TutoVideoService|}}} | {{{TutoVideoURL|}}} }}
+</div>
+</div>
+</div>
+</div>
+| StepRight = 
+<div class="row">
+<div class="col-md-6 DokitPageImage">[[DokitPageStepRightContent::{{{DokitPageStepRightContent|}}}]]</div>
+<div class="col-md-6 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageStepRightImage}}}|frameless]]|{{{DokitPageStepRightImageAnnotation}}}}}</div>
+</div>
+| StepLeft = 
+<div class="row">
+<div class="col-md-6 DokitPageImage">[[DokitPageStepLeftContent::{{{DokitPageStepLeftContent|}}}]]</div>
+<div class="col-md-6 DokitPageImage">{{#annotatedImage:[[File:{{{DokitPageStepLeftImage}}}|frameless]]|{{{DokitPageStepLeftImageAnnotation}}}}}</div>
+</div>
+| StepLeft = 
+| Title = {{#switch: {{{DokitPageTitleType|}}}
+| H1 = <h1>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h1>
+| H2 = <h2>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h2>
+| H3 = <h3>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h3>
+| H4 = <h4>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h4>
+| H5 = <h5>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h5>
+| H6 = <h6>[[DokitPageTitle::{{{DokitPageTitle|}}}]]</h6>
+}}
+| VeText = {{{DokitPageVeText|}}}
+| File = <div class="attach-link-table"><i class="fa fa-file"></i> [[:File:{{{DokitPageFile|}}}]]</div>
+| Transclude = {{:{{{DokitPageTransclude|}}}}}
+| Wikitext = {{{DokitPageWikitext|}}}
+|}}
+
+<div class="display-none">
+[[StepType::{{{StepType|}}}]]
+[[DokitPageTitleType::{{{DokitPageTitleType|}}}]]
+[[DokitPageImageColumns::{{{DokitPageImageColumns|}}}]]
+[[Category:DokitPage]]
+</div>

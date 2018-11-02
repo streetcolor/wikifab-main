@@ -1,0 +1,17 @@
+<div class="explore-page-header manual-banner">
+<div class="container">
+<h1>{{int:dokit-mypages-title}}</h1>
+</div>
+</div>
+<div class="container">
+{{#ask: [[Page_creator::User:{{#username:alt}}]] [[:+||Item:+||Group:+]]
+ |?Modification date
+ |?Complete
+ |?Category
+ |format=broadtable
+ |link=all
+ |headers=plain
+ |searchlabel=&hellip; autres résultats
+ |class=sortable jquery-tablesorter table table-striped
+}}
+</div>

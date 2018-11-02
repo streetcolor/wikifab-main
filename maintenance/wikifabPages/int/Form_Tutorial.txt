@@ -10,38 +10,18 @@ __NOTOC__<noinclude>
 </div>|
 <h1>{{int:wf-formtutorial-main-title}}</h1>
 {{#forminput:form=Tutorial|button text={{int:wf-formtutorial-main-btn}}|placeholder={{int:wf-formtutorial-main-placeholder}}|}}
-<p data-toggle="modal" data-target="#ModalNom"><span class="glyphicon glyphicon-info-sign"></span> {{int:wf-formtutorial-main-subtitle}}</p>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-<div class="col-md-4 col-sm-4 col-xs-12">
-[[Wikifab:Get_started|<span class="contribute-block">
-<span class="glyphicon glyphicon-thumbs-up icon-contribute" aria-hidden="true"></span>
-<span class="contribute-block-title">{{int:wf-contribute-getstart-title}}</span>
-<span>{{int:wf-contribute-getstart-subtitle1}}</span>
-</span>]]
-</div>
-<div class="col-md-4 col-sm-4 col-xs-12">
-[[Wikifab:Taking_pictures|<span class="contribute-block">
-<span class="glyphicon glyphicon-camera icon-contribute" aria-hidden="true"></span>
-<span class="contribute-block-title">{{int:wf-contribute-takingpictures-title}}</span>
-<span>{{int:wf-contribute-takingpictures-subtitle1}}</span>
-</span>]]
-</div>
-<div class="col-md-4 col-sm-4 col-xs-12">
-[[Wikifab:Help|<span class="contribute-block">
-<span class="glyphicon glyphicon-book icon-contribute" aria-hidden="true"></span>
-<span class="contribute-block-title">{{int:wf-contribute-help-title}}</span>
-<span>{{int:wf-contribute-help-subtitle1}}</span>
-</span>]]
 </div>
 </div>
 </div>
 }}
 </noinclude><includeonly>
 <div id="wikiPreview" style="display: none; padding-bottom: 25px; margin-bottom: 25px; border-bottom: 1px solid #AAAAAA;"></div>
+<div class="display-none">
+{{{for template|Version}}}
+{{{field|SourceVersion|input type=text|default={{PAGENAME}} }}}
+{{{field|IsMasterVersion|input type=text|default=1}}}
+{{{end template}}}
+</div>
 {{{for template|Tuto Details}}}
 <div class="row">
 <div class="col-md-4 col-sm-4 col-xs-12 col-pic-detail">
@@ -59,14 +39,14 @@ __NOTOC__<noinclude>
 </div>
 </div>
 <div class="row">
-<div class="col-md-6 col-xs-12">
+{{#if: {{#ask: [[Dokit:PropertiesList]] [[PropertyDifficulty::yes]] }} |<div class="col-md-6 col-xs-12">
 <div class="WfFormLabel"><span>{{int:wf-formtutorial-difficulty-field-title}}</span><span class="custom-tooltip">{{#info:<p>'''{{int:wf-formtutorial-difficulty-popup-title1}}''' {{int:wf-formtutorial-difficulty-popup-text1}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title2}}''' {{int:wf-formtutorial-difficulty-popup-text2}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title3}}''' {{int:wf-formtutorial-difficulty-popup-text3}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title4}}''' {{int:wf-formtutorial-difficulty-popup-text4}}</p><p>'''{{int:wf-formtutorial-difficulty-popup-title5}}''' {{int:wf-formtutorial-difficulty-popup-text5}}</p>}}</span></div>
 {{{field|Difficulty|input type=dropdown|mandatory|class=WfFormDropdown|mapping using translate=wf-propertyvalue-difficulty-}}} 
-</div>
-<div class="col-md-6 col-xs-12">
+</div>|}}
+{{#if: {{#ask: [[Dokit:PropertiesList]] [[PropertyDuration::yes]] }} |<div class="col-md-6 col-xs-12">
 <div class="WfFormLabel"><span>{{int:wf-formtutorial-duration-field-title}}</span><span class="custom-tooltip">{{#info:{{int:wf-formtutorial-duration-popup}}|}}</span></div>
 {{{field|Duration|mandatory|class=WfFormText WfFormTextCombine}}} {{{field|Duration-type|mandatory|input type=dropdown|class=WfFormDropdown WfFormDropdownCombine|mapping using translate=wf-propertyvalue-durationtype-}}} 
-</div>
+</div>|}}
 <!-- START DROPDOWN ADMIN PROPERTY LIST --><!--END DROPDOWN ADMIN PROPERTY LIST -->
 </div>
 <div class="WfFormLabel"><span>{{int:wf-formtutorial-tags-field-title}}</span><span class="custom-tooltip">{{#info:{{int:wf-formtutorial-tags-popup}}|}}</span></div>
@@ -75,22 +55,24 @@ __NOTOC__<noinclude>
 </div>
 {{{end template}}}
 <div class="hrContentMinor-2"></div>
+<div class="IntroductionFormTemplate hide-mobile-view">
 {{{for template|Introduction}}}
 <div class="edit-step-title">{{int:wf-formtutorial-introduction-field-title}} <span>{{int:wf-formtutorial-introduction-field-info}}</span></div>
 {{{field|Introduction|input type=textarea|translatable|rows=5|maxlength=10000|class=form-textarea}}}
 {{{end template}}}
-<div class="multipleTemplateHideButton">
+</div>
+<div class="multipleTemplateHideButton hide-mobile-view">
 {{{for template|TutoVideo|multiple|minimum=0|maximum instances=1|add button text={{int:wf-tuto-video-btnlink}} }}}
 {{#formLinkVideo:{{{field|TutoVideoService|dropdown|mandatory|class=embedVideoDropdown}}} | {{{field|TutoVideoURL|mandatory|class=embedVideoUrlInput WfFormText}}}}} 
 {{{end template}}}
 </div>
 {{{for template|Materials}}}
-<div class="Input-tabs">
+<div class="Input-tabs hide-mobile-view">
 {{#tag:tabber|
- {{int:dokit-item-tabs-title}}=<div class="file-subtitle"><span>{{int:dokit-item-tabs-subtitle}}</span><span class="custom-tooltip">{{#info:{{int:dokit-item-tabs-subtitle-tooltip|[[Form:Item|{{int:dokit-item-tabs-subtitle-tooltip-link}}]]}}}}</span></div>
+{{#if: {{#ask: [[Dokit:DocOptions]] [[DokitItemEnable::yes]] }}| {{int:dokit-item-tabs-title}}=<div class="file-subtitle"><span>{{int:dokit-item-tabs-subtitle}}</span><span class="custom-tooltip">{{#info:{{int:dokit-item-tabs-subtitle-tooltip|[[Form:Item|{{int:dokit-item-tabs-subtitle-tooltip-link}}]]}}}}</span></div>
 <div class="prerequisites-selection">{{{field|ItemList|holds template}}}</div>
-{{!}}-{{!}}
- {{int:wf-prerequisites-tabs-title}} =<h4>{{int:wf-prerequisites-tabs-subtitle}}</h4><div class="prerequisites-selection">{{{field|Prerequisites|holds template}}}</div>
+{{!}}-{{!}}|}}
+ {{int:wf-prerequisites-tabs-title}} =<div class="file-subtitle">{{int:wf-prerequisites-tabs-subtitle}}</div><div class="prerequisites-selection">{{{field|Prerequisites|holds template}}}</div>
 {{!}}-{{!}}
  {{int:wf-formtutorial-file-tabs-title}}=<div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12 box-file-form">
@@ -102,18 +84,19 @@ __NOTOC__<noinclude>
 </div>
 }}
 </div>
+</div>
 {{{end template}}}
 {{{for template|ItemList|multiple|maximum instances=100|add button text={{int:dokit-item-tabs-btnlink}}|embed in field=Materials[ItemList]}}}{{{field|Item|input type=combobox|existing values only|placeholder={{int:dokit-item-tabs-placeholder}}|values from namespace=Item}}}{{{end template}}}
 {{{for template|Prerequisites|multiple|maximum instances=20|add button text={{int:wf-prerequisites-tabs-btnlink}}|embed in field=Materials[Prerequisites]}}}{{{field|Prerequisites|input type=combobox|existing values only|placeholder={{int:wf-prerequisites-tabs-placeholder}}|values from category=Tutorials}}}{{{end template}}}
 {{{for template|ExternalAttachmentsLinks|multiple|maximum instances=10|add button text={{int:wf-formtutorial-file-tabs-btnlink}}|embed in field=Materials[ExternalAttachmentsLinks]}}}{{{field|ExternalAttachmentsLinks|input type=text|class=WfFormText}}}{{{end template}}}
-{{{for template|Tuto_Attachments|multiple|maximum instances=30|add button text={{int:wf-formtutorial-file-tabs-btnfile}}|embed in field=Materials[Tuto_Attachments]}}}{{{field|Attachment|class=WfFormText|default=|uploadable}}}{{{end template}}}
-<div class="bg-halfsquare-separator-2"></div>
+{{{for template|Tuto_Attachments|multiple|maximum instances=30|add button text={{int:wf-formtutorial-file-tabs-btnfile}}|embed in field=Materials[Tuto_Attachments]}}}{{{field|Attachment|class=WfFormTextFullWidth|default=|uploadable}}}{{{end template}}}
+<div class="bg-halfsquare-separator-2 hide-mobile-view"></div>
 {{{for template|Separator}}}<br>{{{end template}}}
 <h2>{{int:wf-formtutorial-steps}}</h2>
 <div class="multipleTemplate-tutostep">{{{for template|Tuto Step|multiple|minimum instances=1|maximum instances=400|add button text={{int:wf-formtutorial-step-btnaddstep}} }}}
-<div class="row">
+<div class="WfFormTutoStep">
 <div class="col-sm-6 col-xs-12 col-sm-push-6 WfFormTutoStepInstructions">
-<div>{{{field|Step_Title|input type=text|translatable|class=form-text form-step-title|placeholder={{int:wf-formtutorial-step-title-placeholder}}|size=50}}}</div>
+<div class="step-title-numeroted">{{{field|Step_Title|input type=text|translatable|class=form-text form-step-title|placeholder={{int:wf-formtutorial-step-title-placeholder}}|size=50}}}</div>
 <div>{{{field|Step_Content|input type=textarea|translatable|rows=16|class=form-textarea}}}</div>
 </div>
 <div class="col-sm-6 col-xs-12 col-sm-pull-6">
@@ -133,17 +116,17 @@ __NOTOC__<noinclude>
 </div>
 </div>
 </div>
-<div class="hrContentMinor"></div>{{{end template}}}</div>
-<div class="bg-halfsquare-separator-3"></div>
-<div class="notes-ref">
+{{{end template}}}</div>
+<div class="bg-halfsquare-separator-3 hide-mobile-view"></div>
+<div class="notes-ref hide-mobile-view">
 <h2>{{int:wf-formtutorial-note-title}}</h2>
 {{{for template|Notes}}}
 {{{field|Notes|input type=textarea|class=form-textarea|translatable|rows=5|maxlength=5000}}}
 {{{end template}}}
 </div>
-<hr class="WfEndForm">
+<hr class="WfEndForm hide-mobile-view">
 <div class="saving-menu">{{{standard input|saveDraft}}}
-<span class="status-checkbox">{{int:wf-completetooltip-label}} : {{{for template|Tuto_Status}}}{{{field|Complete|default=Draft|mandatory|input type=dropdown|class=WfFormDropdownLight|mapping using translate=wf-propertyvalue-complete-}}}{{{end template}}}</span><span class="custom-tooltip-light">{{#info:<p>'''{{int:wf-propertyvalue-complete-Published}} :''' {{int:wf-completetooltip-published-description}}</p><p>'''{{int:wf-propertyvalue-complete-Draft}} :''' {{int:wf-completetooltip-draft-description}}</p>}}</span><span class="display-none">{{{standard input|watch}}}</span>{{{standard input|cancel}}}{{{standard input|save}}}<span id="loaderSave"><i class="fa fa-spinner fa-pulse fa-2x fa-fw "></i></span>
+<span class="display-none">{{{standard input|watch}}}</span>{{{standard input|save}}}<span id="loaderSave"><i class="fa fa-spinner fa-pulse fa-2x fa-fw "></i></span>{{{standard input|cancel}}}<div class="status-checkbox-container"><span class="status-checkbox-label">{{int:wf-completetooltip-label}}</span><span class="status-checkbox">{{{for template|Tuto_Status}}}{{{field|Complete|default=Draft|mandatory|input type=dropdown|class=WfFormDropdownLight|mapping using translate=wf-propertyvalue-complete-}}}{{{end template}}}</span><span class="custom-tooltip-light">{{#info:<p>'''{{int:wf-propertyvalue-complete-Published}} :''' {{int:wf-completetooltip-published-description}}</p><p>'''{{int:wf-propertyvalue-complete-Draft}} :''' {{int:wf-completetooltip-draft-description}}</p>}}</span></div>
 </div>
 </includeonly>
 

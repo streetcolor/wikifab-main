@@ -1,0 +1,3 @@
+{{DokitDocOptions
+|DokitItemEnable=yes
+}}

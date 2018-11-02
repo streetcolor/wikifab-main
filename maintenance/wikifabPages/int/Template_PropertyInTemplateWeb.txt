@@ -1,0 +1,4 @@
+<div class="tuto-items-details-container noprint">
+<div class="tuto-items-details-container-left"><i class="fa fa-building-o" aria-hidden="true"></i> PropertyTitle</div>
+<div class="tuto-items-details-container-right"><span class="propertyKey" style="display:none">[[PropertyPageName::{{{PropertyPageName|}}}]]</span> {{{PropertyPageName|}}}</div>
+</div>

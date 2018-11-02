@@ -1,4 +1,11 @@
+<div class="row">
+<div class="col-xs-3">
+{{Dokit:AdminNav}}
+</div>
+<div class="col-xs-9">
 <div class="alert alert-success" role="alert"><strong>Well done!</strong> Your properties has been changed!</div>
 <div style="display:none">[[PropertyDifficulty::{{{PropertyDifficulty|}}}]]
 [[PropertyDuration::{{{PropertyDuration|}}}]]</div>
+</div>
+</div>
 [[Category:PropertiesList]]

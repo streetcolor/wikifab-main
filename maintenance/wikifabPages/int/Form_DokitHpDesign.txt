@@ -1,0 +1,28 @@
+__NOTOC__<noinclude>
+{{#forminput:form=DokitHpDesign|button text=Personnaliser la HP|placeholder=Dokit:HpDesign|default=Dokit:HpDesign}}
+</noinclude><includeonly>
+<div class="row">
+<div class="col-xs-3">{{Dokit:AdminNav}}</div>
+<div class="col-xs-9">
+{{{for template|HpDesignChoices}}}
+<div>{{{field|HpDesignBanner|input type=checkboxes|mapping using translate=wf-propertyvalue-HpDesignBanner-|show on select=yes=>HpDesignBannerOptions}}}</div>
+<div id="HpDesignBannerOptions">
+{{{field|HpDesignSearchBar|input type=checkboxes|mapping using translate=wf-propertyvalue-HpDesignSearchBar-}}}
+<h3>{{int:wf-propertyvalue-HpDesignBanner-Title}}</h3>
+<p><span>Français:</span>{{{field|HpDesignTitleFr|mandatory|input type=text}}}</p>
+<p><span>English:</span>{{{field|HpDesignTitleEn|mandatory|input type=text}}}</p>
+<p><span>Deutsch:</span>{{{field|HpDesignTitleDe|mandatory|input type=text}}}</p>
+<p><span>Español:</span>{{{field|HpDesignTitleEs|mandatory|input type=text}}}</p>
+<p><span>Italiano:</span>{{{field|HpDesignTitleIt|mandatory|input type=text}}}</p>
+<p><span>Português:</span>{{{field|HpDesignTitlePt|mandatory|input type=text}}}</p>
+</div>
+<div><span>{{int:wf-propertyvalue-HpDesignBanner-ExploreMode}}</span> {{{field|HpDesignType|input type=dropdown}}}</div>
+<div>{{{field|HpDesignComments|input type=checkboxes|mapping using translate=wf-propertyvalue-HpDesignComments-}}}</div>
+<div>{{{field|HpDesignRecentChanges|input type=checkboxes|mapping using translate=wf-propertyvalue-HpDesignRecentChanges-}}}</div>
+{{{end template}}}
+<hr>
+<span class="display-none">{{{standard input|saveDraft}}} {{{standard input|watch}}}</span>{{{standard input|save|class=btn btn-primary}}}<span id="loaderSave"><i class="fa fa-spinner fa-pulse fa-2x fa-fw "></i></span>{{{standard input|cancel}}}
+</div>
+</div>
+</div>
+</includeonly>

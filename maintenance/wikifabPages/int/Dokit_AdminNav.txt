@@ -1,0 +1,14 @@
+<div class="dokit-adminnav">
+<ul class="nav nav-pills nav-stacked">
+<li>[[Special:ConfigAdmin|{{int:dokit-adminnav-ConfigAdmin}}]]</li>
+<li>[[Special:UploadLogo|{{int:dokit-adminnav-UploadLogo}}]]</li>
+<li>[[Special:UploadBanner|{{int:dokit-adminnav-UploadBanner}}]]</li>
+<li>[[Special:CategoryManager|{{int:dokit-adminnav-CategoryManager}}]]</li>
+<li>[[Special:AddData/CreateProperties/Dokit:PropertiesList|{{int:dokit-adminnav-PropertiesList}}]]</li>
+<li>[[Special:UserManagement|{{int:dokit-adminnav-AssignRoleToUsers}}]]</li>
+<li>[[Special:RolePermissions|{{int:dokit-adminnav-UserRightsSettings}}]]</li>
+<li>[[Dokit:AdminTerms|{{int:dokit-adminnav-AdminTerms}}]]</li>
+<li>[[Special:AddData/DokitHpDesign/Dokit:HpDesign|{{int:dokit-adminnav-HpDesign}}]]</li>
+<li>[[Special:AddData/DokitDocOptions/Dokit:DocOptions|{{int:dokit-adminnav-DocOptions}}]]</li>
+</ul>
+</div>

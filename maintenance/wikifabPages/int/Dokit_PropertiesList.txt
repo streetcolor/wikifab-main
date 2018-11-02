@@ -1,0 +1,4 @@
+{{PropertyOptions
+|PropertyDifficulty=yes
+|PropertyDuration=yes
+}}

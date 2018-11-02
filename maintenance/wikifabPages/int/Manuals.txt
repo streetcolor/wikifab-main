@@ -1,0 +1,14 @@
+<div class="explore-page-header manual-banner">
+<div class="container">
+<h1>{{int:dokit-manual-title}}</h1>
+<div class="items-page-searchbar">
+<inputbox>
+type=search
+namespaces=Group
+placeholder={{int:dokit-manual-search-placeholder}}
+searchbuttonlabel=Search
+</inputbox>
+</div>
+</div>
+</div>
+{{#ifanon:|}}{{#displayExplore:query=[[Category:Group]] |nolang | layout=group| limit=24}}

@@ -26,7 +26,9 @@ require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
 require_once "$IP/extensions/UsersWatchButton/UsersWatchButton.php";
 require_once "$IP/extensions/MmsUpload/MsUpload.php";
 require_once "$IP/extensions/Flow/Flow.php";
-require_once("$IP/extensions/GroupsPage/GroupsPage.php");
+if ( !defined('NS_GROUP')) {
+	require_once("$IP/extensions/GroupsPage/GroupsPage.php");
+}
 require_once "$IP/extensions/Scribunto/Scribunto.php";
 wfLoadExtension( 'CheckPageTitle' );
 wfLoadExtension( 'Echo' );
@@ -56,13 +58,13 @@ $egDraftsAutoSaveTimeout = 30;
 $wgNamespaceContentModels[NS_TALK] = 'flow-board';
 $wgNamespaceContentModels[NS_USER_TALK] = 'flow-board';
 
-$egChameleonLayoutFile= __DIR__ . '/skins/wikifabStyleModule/layout-wikifab.xml';
-$egChameleonLayoutFileSearchResult= __DIR__ . '/skins/wikifabStyleModule/layout-wikifab-search-result-int.php';
-$egChameleonLayoutFileSearchResultUserPage = __DIR__ . '/skins/wikifabStyleModule/layout-wikifab-search-result-userpage-int.php';
+$egChameleonLayoutFile= __DIR__ . '/skins/wikifab-style-module/layout-wikifab.xml';
+$egChameleonLayoutFileSearchResult= __DIR__ . '/skins/wikifab-style-module/layout-wikifab-search-result-int.php';
+$egChameleonLayoutFileSearchResultUserPage = __DIR__ . '/skins/wikifab-style-module/layout-wikifab-search-result-userpage-int.php';
 
 $egChameleonExternalStyleModules = array(
-    __DIR__ . '/skins/wikifabStyleModule/chameleon-wikifab.less' => $wgScriptPath . '/skins/wikifabStyleModule',
-    __DIR__ . '/skins/wikifabStyleModule/font-awesome-4.4.0/less/font-awesome.less' => $wgScriptPath . '/skins/wikifabStyleModule/font-awesome-4.4.0/less/font-awesome.less',
+    __DIR__ . '/skins/wikifab-style-module/chameleon-wikifab.less' => $wgScriptPath . '/skins/wikifab-style-module',
+    __DIR__ . '/skins/wikifab-style-module/font-awesome-4.4.0/less/font-awesome.less' => $wgScriptPath . '/skins/wikifab-style-module/font-awesome-4.4.0/less/font-awesome.less',
 );
 
 $wgMessagesDirs['WikifabOrg'] = __DIR__ . "/i18n"; # Location of localisation files (Tell MediaWiki to load them)

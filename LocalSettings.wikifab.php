@@ -225,4 +225,4 @@ $wgCommentStreamsEnableVoting = true;
 $wgCommentStreamsEnableAccepting = true;
 $wgCommentStreamsUnfoldedNewCommentStreamBox = true;
 
-$wgmaintenanceNotOverwrite = ['Dokit:PropertiesList', 'Dokit:HpDesign', 'Dokit:DocOptions'];
+$wginitPagesNotOverwrite = ['Dokit:PropertiesList', 'Dokit:HpDesign', 'Dokit:DocOptions'];

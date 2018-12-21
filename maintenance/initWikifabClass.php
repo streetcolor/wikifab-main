@@ -164,7 +164,7 @@ class InitWikifab extends Maintenance {
 				$ret = preg_match( $search_pattern, $nativeData, $matches );
 
 				if ($ret) {
-					$replace = '/<!-- START ADMIN ' . strtoupper($type) . ' PROPERTY LIST -->';
+					$replace = '<!-- START ADMIN ' . strtoupper($type) . ' PROPERTY LIST -->';
 					$replace .= $matches[1];
 					$replace .= '<!--END ADMIN ' . strtoupper($type) . ' PROPERTY LIST -->';
 

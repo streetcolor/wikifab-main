@@ -224,3 +224,5 @@ $wfexploreCategoriesNames['Comments'] = wfMessage('wfexplore-filters-comments');
 $wgCommentStreamsEnableVoting = true;
 $wgCommentStreamsEnableAccepting = true;
 $wgCommentStreamsUnfoldedNewCommentStreamBox = true;
+
+$wgmaintenanceNotOverwrite = ['Dokit:PropertiesList', 'Dokit:HpDesign', 'Dokit:DocOptions'];

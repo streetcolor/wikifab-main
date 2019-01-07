@@ -131,6 +131,9 @@ $wgThumbLimits = [
 $wgDefaultUserOptions['thumbsize'] = 3;
 $wgDefaultUserOptions['multimediaviewer-enable'] = 1;
 
+define("NS_ITEM", 950);
+define("NS_ITEM_TALK", 951);
+
 $wgUploadThumbnailRenderMap[] = 150;
 $wgUploadThumbnailRenderMap[] = 300;
 $wgUploadThumbnailRenderMap[] = 400;

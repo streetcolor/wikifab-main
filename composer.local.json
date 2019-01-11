@@ -6,6 +6,14 @@
 		},
 		{
 			"type": "vcs",
+			"url": "git@gitlab.com:Dokit/extension-bookpage.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@gitlab.com:Dokit/manualsgroupspage.git"
+		},
+		{
+			"type": "vcs",
 			"url": "git@gitlab.com:Dokit/mediawiki-extensions-CommentStreams.git"
         },
 		{
@@ -100,6 +108,8 @@
 		"mediawiki/semantic-media-wiki": "2.5.6",
 		"mediawiki/user-functions": "~2.6",
 		"dokit/custom-properties": "dev-julien",
+		"dokit/book-page": "dev-ticket-1024",
+		"dokit/manuals-groups-page": "dev-ticket-master",
 		"tinymighty/wiki-seo": "^1.2.2",
 		"wikifab/author-div": "^0.1.1",
 		"wikifab/auto-set-page-lang": "^1.1.3",

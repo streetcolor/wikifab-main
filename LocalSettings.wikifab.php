@@ -26,10 +26,14 @@ require_once "$IP/extensions/ParserFunctions/ParserFunctions.php";
 require_once "$IP/extensions/UsersWatchButton/UsersWatchButton.php";
 require_once "$IP/extensions/MmsUpload/MsUpload.php";
 require_once "$IP/extensions/Flow/Flow.php";
-if ( !defined('NS_GROUP')) {
-	require_once("$IP/extensions/GroupsPage/GroupsPage.php");
-}
+// if ( !defined('NS_GROUP')) {
+// 	require_once("$IP/extensions/GroupsPage/GroupsPage.php");
+// }
 require_once "$IP/extensions/Scribunto/Scribunto.php";
+
+if(! defined("NS_MANUAL")) {
+    define("NS_MANUAL", 226);
+}
 wfLoadExtension( 'CheckPageTitle' );
 wfLoadExtension( 'Echo' );
 wfLoadExtension( 'EmbedVideo' );
@@ -48,6 +52,11 @@ wfLoadExtension( 'CustomProperties' );
 wfLoadExtension( 'CommentStreams' );
 wfLoadExtension( 'UsersPagesLinks');
 wfLoadExtension( 'LatestDiscussions' );
+
+wfLoadExtension( 'BookPage' );
+wfLoadExtension( 'PdfBookExportRequest' );
+
+require_once "$IP/extensions/ManualsGroupsPage/GroupsPage.php";
 
 $wgScribuntoDefaultEngine = 'luastandalone';
 
